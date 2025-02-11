@@ -1,5 +1,9 @@
 # Direktori dan file build
-/build/
+/app/build/
+/app/build.gradle/
+gradlew/
+gradlew.bat/
+/gradle/
 /out/
 /captures/
 /dist/
@@ -10,9 +14,11 @@
 # File yang dibuat Gradle
 .gradle/
 /local.properties
+local.properties/
 /.gradle/
 /build/
 /settings.gradle
+settings.gradle/
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
