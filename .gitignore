@@ -1,9 +1,12 @@
 # Direktori dan file build
 /app/build/
 /app/build.gradle/
-gradlew/
-gradlew.bat/
-/gradle/
+.gradlew
+.gradlew.bat
+gradle/
+build/
+.git
+.gitignore
 /out/
 /captures/
 /dist/
