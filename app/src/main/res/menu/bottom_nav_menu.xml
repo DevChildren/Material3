@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_kalkulator"
+        android:icon="@drawable/ic_calculator"
+        android:title="Kalkulator" />
+    <item
+        android:id="@+id/nav_biaya"
+        android:icon="@drawable/ic_money"
+        android:title="Biaya" />
+    <item
+        android:id="@+id/nav_proyek"
+        android:icon="@drawable/ic_project"
+        android:title="Proyek" />
+</menu>

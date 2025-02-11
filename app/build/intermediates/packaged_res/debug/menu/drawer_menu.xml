@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_history"
+        android:title="Riwayat"
+        android:icon="@drawable/ic_history"/>
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Pengaturan"
+        android:icon="@drawable/ic_settings"/>
+    <item
+        android:id="@+id/nav_about"
+        android:title="Tentang"
+        android:icon="@drawable/ic_info"/>
+</menu>

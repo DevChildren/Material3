@@ -1,0 +1,53 @@
+# Direktori dan file build
+/build/
+/out/
+/captures/
+/dist/
+/gradle/
+/.idea/
+/*.iml
+
+# File yang dibuat Gradle
+.gradle/
+/local.properties
+/.gradle/
+/build/
+/settings.gradle
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# File sementara sistem
+.DS_Store
+*.swp
+*.swo
+*.bak
+
+# File yang dibuat oleh Android Studio dan Termux
+*.log
+*.lock
+*.gz
+*.jar
+*.apk
+*.ap_
+/gen/
+/bin/
+/obj/
+/libs/
+/tmp/
+
+# Cache dari package manager
+/node_modules/
+/yarn.lock
+/pnpm-lock.yaml
+
+# File kredensial atau konfigurasi lokal
+*.keystore
+*.jks
+*.gradle
+/credentials.json
+/google-services.json
+/firebase/

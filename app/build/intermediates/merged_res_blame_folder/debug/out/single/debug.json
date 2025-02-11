@@ -1,0 +1,162 @@
+[
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_lingkar.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_lingkar.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_money.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_money.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_history.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_history.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_crot.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_crot.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_tangga.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_tangga.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_balok.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_balok.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_me.png.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/me.png"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_keramik.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_keramik.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/menu_top_app_bar_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/menu/top_app_bar_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_settings.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_switch_item.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/switch_item.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_event.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_event.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_fragment_home.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_activity_main.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_fragment_proyek.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/fragment_proyek.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_segitiga.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_segitiga.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_kayu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_kayu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_kubus.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_kubus.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_calculator.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_calculator.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_persegi_panjang.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_persegi_panjang.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_fragment_kalkulator.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/fragment_kalkulator.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_fragment_biaya.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/fragment_biaya.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_bottom_sheet_layout.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/bottom_sheet_layout.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_plafond.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_plafond.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_besi.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_besi.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/mipmap_me.png.flat",
+        "source": "com.develite.pro.app-main-34:/mipmap/me.png"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_kerucut.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton_kerucut.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_project.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_project.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_info.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_bata_t.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_bata_t.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_home.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_cat.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_cat.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_pasir.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_pasir.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_beton.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_item_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/item_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/menu_main_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/menu/main_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/menu_drawer_menu.xml.flat",
+        "source": "com.develite.pro.app-main-34:/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_bata.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_bata.xml"
+    }
+]

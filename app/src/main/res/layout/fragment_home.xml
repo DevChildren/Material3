@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang di Aplikasi Manajemen Proyek"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_kalkulator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kalkulator Material"
+            style="@style/Widget.Material3.Button.Filled"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_biaya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estimasi Biaya"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.Material3.Button.Outlined"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_proyek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manajemen Proyek"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.Material3.Button.Text"/>
+    </LinearLayout>
+ </LinearLayout>
