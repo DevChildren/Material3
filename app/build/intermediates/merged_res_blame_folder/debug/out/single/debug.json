@@ -8,6 +8,10 @@
         "source": "com.develite.pro.app-main-34:/drawable/ic_money.xml"
     },
     {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_delete.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_delete.xml"
+    },
+    {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_history.xml.flat",
         "source": "com.develite.pro.app-main-34:/drawable/ic_history.xml"
     },
@@ -64,12 +68,20 @@
         "source": "com.develite.pro.app-main-34:/layout/fragment_proyek.xml"
     },
     {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_edit.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_edit.xml"
+    },
+    {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_segitiga.xml.flat",
         "source": "com.develite.pro.app-main-34:/drawable/ic_beton_segitiga.xml"
     },
     {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_kayu.xml.flat",
         "source": "com.develite.pro.app-main-34:/drawable/ic_kayu.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_close.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_close.xml"
     },
     {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_kubus.xml.flat",
@@ -130,6 +142,10 @@
     {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_home.xml.flat",
         "source": "com.develite.pro.app-main-34:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_add.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_add.xml"
     },
     {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_cat.xml.flat",

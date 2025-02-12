@@ -142,6 +142,7 @@ color md_theme_tertiaryFixed_mediumContrast
 color md_theme_tertiary_highContrast
 color md_theme_tertiary_mediumContrast
 color primary
+drawable ic_add
 drawable ic_bata
 drawable ic_bata_t
 drawable ic_besi
@@ -155,7 +156,10 @@ drawable ic_beton_segitiga
 drawable ic_beton_tangga
 drawable ic_calculator
 drawable ic_cat
+drawable ic_close
 drawable ic_crot
+drawable ic_delete
+drawable ic_edit
 drawable ic_event
 drawable ic_history
 drawable ic_home
@@ -174,13 +178,16 @@ id action_settings
 id action_switch
 id appBarLayout
 id bottom_navigation
-id btn_biaya
 id btn_hitung_biaya
 id btn_hitung_material
-id btn_kalkulator
-id btn_proyek
 id btn_simpan_proyek
+id card_saldo
 id drawer_layout
+id fab_add_proyek
+id fab_edit_proyek
+id fab_estimasi
+id fab_main
+id fab_material
 id fragment_container
 id img_icon
 id input_harga_satuan
@@ -199,6 +206,7 @@ id nav_proyek
 id nav_settings
 id navigation_view
 id recycler_menu
+id rv_proyek
 id switch_theme
 id topAppBar
 id tv_hasil_biaya

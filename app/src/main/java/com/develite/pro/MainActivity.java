@@ -13,6 +13,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import android.view.Window;
+import android.view.WindowInsetsController;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       Window window = getWindow();
+       window.setStatusBarColor(getColor(R.color.md_theme_surfaceContainer));
+       window.getInsetsController().setSystemBarsAppearance(
+       WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
 
         drawerLayout = findViewById(R.id.drawer_layout);
         MaterialToolbar topAppBar = findViewById(R.id.topAppBar);

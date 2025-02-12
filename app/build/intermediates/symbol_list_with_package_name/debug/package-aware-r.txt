@@ -3053,6 +3053,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_add
 drawable ic_arrow_back_black_24
 drawable ic_bata
 drawable ic_bata_t
@@ -3069,7 +3070,10 @@ drawable ic_calculator
 drawable ic_cat
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_close
 drawable ic_crot
+drawable ic_delete
+drawable ic_edit
 drawable ic_event
 drawable ic_history
 drawable ic_home
@@ -3269,15 +3273,13 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id btn_biaya
 id btn_hitung_biaya
 id btn_hitung_material
-id btn_kalkulator
-id btn_proyek
 id btn_simpan_proyek
 id buttonPanel
 id cache_measures
 id cancel_button
+id card_saldo
 id carryVelocity
 id center
 id centerCrop
@@ -3357,6 +3359,11 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab_add_proyek
+id fab_edit_proyek
+id fab_estimasi
+id fab_main
+id fab_material
 id fade
 id fill
 id fill_horizontal
@@ -3545,6 +3552,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_proyek
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
