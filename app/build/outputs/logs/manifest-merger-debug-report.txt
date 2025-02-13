@@ -11,6 +11,7 @@ MERGED from [androidx.appcompat:appcompat:1.6.1] /data/data/com.termux/files/hom
 MERGED from [androidx.recyclerview:recyclerview:1.3.1] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/9615e7788e2ead50233343043cce608a/transformed/recyclerview-1.3.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/671834e7388f328279d3604dbe3e227b/transformed/jetified-viewpager2-1.1.0-beta02/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.6.1] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/b8b86392c22cc05dae05a36eee9f5920/transformed/fragment-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/4d10389fbd0379b92dba3539532c190f/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/35f6633821be5f9d055fcd8eae65b170/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/14e2d0582e32ceb76cefb9484c6882a1/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/2618952868ddc28c7bcc9140c5a8fcc8/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
@@ -63,6 +64,10 @@ INJECTED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManife
 		INJECTED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManifest.xml:3:4-65
+	android:name
+		ADDED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManifest.xml:3:21-63
 application
 ADDED from /data/data/com.termux/files/home/devApp/app/src/main/AndroidManifest.xml:4:5-18:19
 MERGED from [com.google.android.material:material:1.9.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/b018d5fe80fb8cf4737b22d2b07fa6e2/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
@@ -129,6 +134,8 @@ MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /data/data/com.termux/
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/671834e7388f328279d3604dbe3e227b/transformed/jetified-viewpager2-1.1.0-beta02/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.6.1] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/b8b86392c22cc05dae05a36eee9f5920/transformed/fragment-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.6.1] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/b8b86392c22cc05dae05a36eee9f5920/transformed/fragment-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/4d10389fbd0379b92dba3539532c190f/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/4d10389fbd0379b92dba3539532c190f/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/35f6633821be5f9d055fcd8eae65b170/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/35f6633821be5f9d055fcd8eae65b170/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/14e2d0582e32ceb76cefb9484c6882a1/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44

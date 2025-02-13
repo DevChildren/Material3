@@ -189,6 +189,7 @@ id fab_estimasi
 id fab_main
 id fab_material
 id fragment_container
+id groupedBarChart
 id img_icon
 id input_harga_satuan
 id input_jumlah_material

@@ -11,11 +11,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.graphics.Color;
+import androidx.core.content.ContextCompat;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+
+
 
 public class HomeFragment extends Fragment {
    
     private FloatingActionButton fabMain, fabAdd, fabEdit, fabEstimasi, fabMaterial;
     private boolean isMenuOpen = false;
+    private BarChart groupedBarChart;
 
     @Nullable
     @Override
@@ -23,6 +37,11 @@ public class HomeFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        
+        groupedBarChart = view.findViewById(R.id.groupedBarChart);
+
+        setupGroupedBarChart();
+
         
         // Inisialisasi FAB dengan view.findViewById
         fabMain = view.findViewById(R.id.fab_main);
@@ -71,5 +90,58 @@ public class HomeFragment extends Fragment {
      view.setVisibility(View.GONE);
             }
         });
+    }
+    
+    private void setupGroupedBarChart() {
+        float groupSpace = 0.4f; // Jarak antar grup
+        float barSpace = 0.05f; // Jarak antar bar dalam grup
+        float barWidth = 0.2f; // Lebar tiap bar
+
+        ArrayList<BarEntry> biayaEntries = new ArrayList<>();
+        ArrayList<BarEntry> materialEntries = new ArrayList<>();
+        ArrayList<BarEntry> proyekEntries = new ArrayList<>();
+        ArrayList<BarEntry> progressEntries = new ArrayList<>();
+
+        // Data untuk tiap kategori dalam grup
+        biayaEntries.add(new BarEntry(1, 5000)); // Estimasi Biaya
+        materialEntries.add(new BarEntry(1, 7000)); // Kalkulator Material
+        proyekEntries.add(new BarEntry(1, 6000)); // Manajemen Proyek
+        progressEntries.add(new BarEntry(1, 4000)); // Progress
+
+        biayaEntries.add(new BarEntry(2, 6000));
+        materialEntries.add(new BarEntry(2, 5000));
+        proyekEntries.add(new BarEntry(2, 8000));
+        progressEntries.add(new BarEntry(2, 3000));
+        
+        
+        biayaEntries.add(new BarEntry(3, 6000));
+        materialEntries.add(new BarEntry(3, 5000));
+        proyekEntries.add(new BarEntry(3, 8000));
+        progressEntries.add(new BarEntry(3, 3000));
+
+        BarDataSet biayaDataSet = new BarDataSet(biayaEntries, "Estimasi Biaya");
+        biayaDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+
+        BarDataSet materialDataSet = new BarDataSet(materialEntries, "Kalkulator Material");
+        materialDataSet.setColors(ColorTemplate.LIBERTY_COLORS);
+       
+        BarDataSet proyekDataSet = new BarDataSet(proyekEntries, "Manajemen Proyek");
+        proyekDataSet.setColors(ColorTemplate.PASTEL_COLORS);
+      
+        BarDataSet progressDataSet = new BarDataSet(progressEntries, "Progress");
+        progressDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+
+        ArrayList<IBarDataSet> dataSets = new ArrayList<>();
+        dataSets.add(biayaDataSet);
+        dataSets.add(materialDataSet);
+        dataSets.add(proyekDataSet);
+        dataSets.add(progressDataSet);
+
+        BarData data = new BarData(dataSets);
+        data.setBarWidth(barWidth);
+
+        groupedBarChart.setData(data);
+        groupedBarChart.groupBars(0, groupSpace, barSpace);
+        groupedBarChart.invalidate();
     }
 }

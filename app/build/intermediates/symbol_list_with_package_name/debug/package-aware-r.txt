@@ -3388,6 +3388,7 @@ id gone
 id graph
 id graph_wrap
 id group_divider
+id groupedBarChart
 id grouping
 id groups
 id header_title
