@@ -56,6 +56,10 @@
         "source": "com.develite.pro.app-main-34:/drawable/ic_event.xml"
     },
     {
+        "merged": "com.develite.pro.app-merged_res-32:/layout_item_proyek.xml.flat",
+        "source": "com.develite.pro.app-main-34:/layout/item_proyek.xml"
+    },
+    {
         "merged": "com.develite.pro.app-merged_res-32:/layout_fragment_home.xml.flat",
         "source": "com.develite.pro.app-main-34:/layout/fragment_home.xml"
     },
@@ -116,12 +120,20 @@
         "source": "com.develite.pro.app-main-34:/drawable/ic_plafond.xml"
     },
     {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_arrow_next.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_arrow_next.xml"
+    },
+    {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_besi.xml.flat",
         "source": "com.develite.pro.app-main-34:/drawable/ic_besi.xml"
     },
     {
         "merged": "com.develite.pro.app-merged_res-32:/mipmap_me.png.flat",
         "source": "com.develite.pro.app-main-34:/mipmap/me.png"
+    },
+    {
+        "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_arrow_preview.xml.flat",
+        "source": "com.develite.pro.app-main-34:/drawable/ic_arrow_preview.xml"
     },
     {
         "merged": "com.develite.pro.app-merged_res-32:/drawable_ic_beton_kerucut.xml.flat",

@@ -142,7 +142,7 @@
     <color name="md_theme_tertiary_highContrast">#003230</color>
     <color name="md_theme_tertiary_mediumContrast">#083D3A</color>
     <color name="primary">#EEEFE3</color>
-    <string name="app_name">Develite Pro</string>
+    <string name="app_name">KONTOL</string>
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>

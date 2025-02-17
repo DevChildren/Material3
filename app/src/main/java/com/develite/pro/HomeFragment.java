@@ -21,8 +21,11 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Arrays;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class HomeFragment extends Fragment {
@@ -49,6 +52,19 @@ public class HomeFragment extends Fragment {
         fabEdit = view.findViewById(R.id.fab_edit_proyek);
         fabEstimasi = view.findViewById(R.id.fab_estimasi);
         fabMaterial = view.findViewById(R.id.fab_material);
+        
+          RecyclerView recyclerView = view.findViewById(R.id.rv_proyek);
+          LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+          recyclerView.setLayoutManager(layoutManager);
+          
+          // Data proyek
+          List<String> listProyek = Arrays.asList("Proyek A", "Proyek B", "Proyek C");
+          
+          // Set adapter
+          ProyekAdapter adapter = new ProyekAdapter(listProyek);
+          recyclerView.setAdapter(adapter);
+
+
 
         fabMain.setOnClickListener(v -> toggleFabMenu());
 
@@ -62,7 +78,9 @@ public class HomeFragment extends Fragment {
             hideFab(fabEstimasi);
             hideFab(fabMaterial);
             fabMain.setImageResource(R.drawable.ic_add);
+            fabMain.setBackgroundColor(R.color.md_theme_primary);
         } else {
+            fabMain.setBackgroundColor(R.color.md_theme_secondary);
             showFab(fabAdd, 1);
             showFab(fabEdit, 2);
             showFab(fabEstimasi, 3);
@@ -119,13 +137,13 @@ public class HomeFragment extends Fragment {
         proyekEntries.add(new BarEntry(3, 8000));
         progressEntries.add(new BarEntry(3, 3000));
 
-        BarDataSet biayaDataSet = new BarDataSet(biayaEntries, "Estimasi Biaya");
+        BarDataSet biayaDataSet = new BarDataSet(biayaEntries, "Estimasi");
         biayaDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        BarDataSet materialDataSet = new BarDataSet(materialEntries, "Kalkulator Material");
+        BarDataSet materialDataSet = new BarDataSet(materialEntries, "Material");
         materialDataSet.setColors(ColorTemplate.LIBERTY_COLORS);
        
-        BarDataSet proyekDataSet = new BarDataSet(proyekEntries, "Manajemen Proyek");
+        BarDataSet proyekDataSet = new BarDataSet(proyekEntries, "Proyek");
         proyekDataSet.setColors(ColorTemplate.PASTEL_COLORS);
       
         BarDataSet progressDataSet = new BarDataSet(progressEntries, "Progress");

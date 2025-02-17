@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorSurfaceContainer"
-                app:title="Kalkulator Material"
+                app:title="KONTOL KAMBING"
                 app:titleTextAppearance="@style/CustomTitleLarge"
                 app:navigationIcon="@drawable/ic_menu" 
                 app:menu="@menu/main_menu"/>

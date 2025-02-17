@@ -3055,6 +3055,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add
 drawable ic_arrow_back_black_24
+drawable ic_arrow_next
+drawable ic_arrow_preview
 drawable ic_bata
 drawable ic_bata_t
 drawable ic_besi
@@ -3679,6 +3681,8 @@ id transition_transform
 id triangle
 id tv_hasil_biaya
 id tv_hasil_material
+id tv_proyek_ic
+id tv_proyek_nama
 id txt_title
 id unchecked
 id uniform
@@ -3839,6 +3843,7 @@ layout fragment_home
 layout fragment_kalkulator
 layout fragment_proyek
 layout item_menu
+layout item_proyek
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
