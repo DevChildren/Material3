@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.develite.pro.app-mergeDebugResources-30:/values-in/values-in.xml",
+            "outputFile": "com.develite.pro.app-mergeDebugResources-31:/values-in/values-in.xml",
             "map": [
                 {
                     "source": "/data/data/com.termux/files/home/.gradle/caches/8.12.1/transforms/c826ca3edbd24cfbab82ebb1828e4fc5/transformed/core-1.9.0/res/values-in/values-in.xml",

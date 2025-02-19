@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+      
        Window window = getWindow();
        window.setStatusBarColor(getColor(R.color.md_theme_surfaceContainer));
        window.getInsetsController().setSystemBarsAppearance(

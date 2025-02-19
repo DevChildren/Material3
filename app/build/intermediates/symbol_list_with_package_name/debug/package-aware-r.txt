@@ -3275,6 +3275,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_delete
+id btn_edit
 id btn_hitung_biaya
 id btn_hitung_material
 id btn_simpan_proyek
@@ -3358,6 +3360,8 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id et_biaya
+id et_nama
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3656,6 +3660,7 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_title
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3665,6 +3670,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id title_proyek
 id title_template
 id toggle
 id top
@@ -3681,7 +3687,7 @@ id transition_transform
 id triangle
 id tv_hasil_biaya
 id tv_hasil_material
-id tv_proyek_ic
+id tv_proyek_biaya
 id tv_proyek_nama
 id txt_title
 id unchecked
@@ -3838,6 +3844,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_edit_proyek
 layout fragment_biaya
 layout fragment_home
 layout fragment_kalkulator
