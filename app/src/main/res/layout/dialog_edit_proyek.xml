@@ -5,17 +5,33 @@
     android:padding="16dp"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_nama"
+       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Proyek" />
+        android:hint="Nama Proyek"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/et_biaya"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    
+       <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Biaya"
-        android:inputType="numberDecimal" />
+        android:hint="Biaya Proyek"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_biaya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+   
+  
 
 </LinearLayout>

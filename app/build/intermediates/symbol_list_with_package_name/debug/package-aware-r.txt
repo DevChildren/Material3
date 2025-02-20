@@ -3283,7 +3283,7 @@ id btn_simpan_proyek
 id buttonPanel
 id cache_measures
 id cancel_button
-id card_saldo
+id card_summary
 id carryVelocity
 id center
 id centerCrop
@@ -3365,11 +3365,7 @@ id et_nama
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab_add_proyek
-id fab_edit_proyek
-id fab_estimasi
 id fab_main
-id fab_material
 id fade
 id fill
 id fill_horizontal
@@ -3394,7 +3390,6 @@ id gone
 id graph
 id graph_wrap
 id group_divider
-id groupedBarChart
 id grouping
 id groups
 id header_title
@@ -3660,7 +3655,6 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_title
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3670,7 +3664,6 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
-id title_proyek
 id title_template
 id toggle
 id top
@@ -3687,7 +3680,6 @@ id transition_transform
 id triangle
 id tv_hasil_biaya
 id tv_hasil_material
-id tv_proyek_biaya
 id tv_proyek_nama
 id txt_title
 id unchecked

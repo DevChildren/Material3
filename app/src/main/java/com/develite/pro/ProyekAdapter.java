@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import androidx.appcompat.app.AlertDialog;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder> {
     private List<Integer> idList;
@@ -32,14 +34,17 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_proyek, parent, false);
         return new ViewHolder(view);
     }
+    
+    private String formatRupiah(double number) {
+     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    return formatRupiah.format(number);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
       Proyek proyek = dataList.get(position);
     holder.tvNama.setText(proyek.getNama());
-    holder.tvBiaya.setText(String.valueOf(proyek.getBiaya()));
-
-    
+    // holder.tvBiaya.setText(formatRupiah(proyek.getBiaya()));
       
         // Tombol edit
         holder.btnEdit.setOnClickListener(v -> {
@@ -59,13 +64,13 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvNama;
-        TextView tvBiaya;
+      
         ImageView btnEdit, btnDelete;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvNama = itemView.findViewById(R.id.tv_proyek_nama);
-            tvBiaya = itemView.findViewById(R.id.tv_proyek_biaya);
+            
             btnEdit = itemView.findViewById(R.id.btn_edit);
             btnDelete = itemView.findViewById(R.id.btn_delete);
         }
