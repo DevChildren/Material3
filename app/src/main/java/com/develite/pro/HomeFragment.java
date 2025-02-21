@@ -28,17 +28,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
+import java.util.regex.Pattern;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+import android.widget.Toast;
 
-
-public class HomeFragment extends Fragment {
-   
+public class HomeFragment extends Fragment  implements OnUpdate{
     private FloatingActionButton fabMain;
     private TextView text_title;
     private DatabaseHelper dbHelper;
     private RecyclerView recyclerView;
     private ProyekAdapter adapter;
+    private TextView totalBiaya;
     private List<Integer> idList = new ArrayList<>();
    private List<Proyek> listProyek = new ArrayList<>();
+   @Override
+    public void onBiayaUpdated() {
+        getTotalBiaya(); 
+    }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, 
@@ -48,10 +56,12 @@ public class HomeFragment extends Fragment {
         
         // Inisialisasi FAB dengan view.findViewById
         fabMain = view.findViewById(R.id.fab_main);
-         
+         totalBiaya = view.findViewById(R.id.value);
         recyclerView = view.findViewById(R.id.rv_proyek);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        
+       getTotalBiaya();
+        
         dbHelper = new DatabaseHelper(requireContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -71,15 +81,64 @@ public class HomeFragment extends Fragment {
         cursor.close();
 
         // Pasang adapter ke RecyclerView
-        ProyekAdapter adapter = new ProyekAdapter(requireContext(), idList, listProyek, dbHelper);
+        ProyekAdapter adapter = new ProyekAdapter(requireContext(), idList, listProyek, this, dbHelper);
         recyclerView.setAdapter(adapter);
-
-
 
         fabMain.setOnClickListener(v -> showAddDialog());
       
         return view;
     }
+    
+    
+    private void getTotalBiaya() {
+    double total = 0;
+
+    dbHelper = new DatabaseHelper(requireContext());
+   SQLiteDatabase db = dbHelper.getWritableDatabase();
+    Cursor cursor = db.rawQuery("SELECT biaya FROM estimasi", null);
+
+    if (cursor != null) {
+        if (cursor.moveToFirst()) {
+            do {
+                int indexBiaya = cursor.getColumnIndex("biaya");
+                if (indexBiaya != -1) {
+                    total += cursor.getDouble(indexBiaya);
+                }
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+    }
+
+    db.close();
+
+    // Pastikan totalBiaya sudah diinisialisasi
+    if (totalBiaya != null) {
+        totalBiaya.setText(format_ui_Rupiah(total));
+    } else {
+        Toast.makeText(getContext(), "TextView totalBiaya belum diinisialisasi!", Toast.LENGTH_LONG).show();
+    }
+}
+
+  
+    private boolean isValidRupiah(String amount) {
+      String regex = "^(Rp ?)?\\d{1,3}(\\.\\d{3})*$";
+      return Pattern.matches(regex, amount);
+    }
+    
+    private String format_ui_Rupiah(double number) {
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    formatRupiah.setMinimumFractionDigits(2);
+    formatRupiah.setMaximumFractionDigits(2);
+    return formatRupiah.format(number);
+}
+    
+    private double format_database_Rupiah(String input) {
+    if (input.isEmpty()) return 0; 
+    String cleaned = input.replace("Rp", "").replace(" ", "").replace(".", "").replace(",", "."); 
+
+    return Double.parseDouble(cleaned); 
+}
+
     
     private void showAddDialog() {
     AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -91,20 +150,22 @@ public class HomeFragment extends Fragment {
 
     builder.setView(view);
     builder.setPositiveButton("Save", (dialog, which) -> {
-        String namaBaru = etNama.getText().toString();
-        double biayaBaru;
+    String namaBaru = etNama.getText().toString().trim();
+    String biayaBaruString = etBiaya.getText().toString().trim();
 
-        try {
-            biayaBaru = Double.parseDouble(etBiaya.getText().toString());
-        } catch (NumberFormatException e) {
-            biayaBaru = 0; // Jika input kosong atau tidak valid
-        }
+    double biayaBaru = 0; 
+    try {
+        biayaBaru = format_database_Rupiah(biayaBaruString); 
+    } catch (NumberFormatException e) {
+        etBiaya.setError("Format tidak valid");
+    }
 
-        addData(namaBaru, biayaBaru);
+    addData(namaBaru, biayaBaru); 
+    getTotalBiaya();
+    
+    adapter.notifyDataSetChanged();
+});
 
-        // Perbarui RecyclerView jika perlu
-        adapter.notifyDataSetChanged();
-    });
 
     builder.setNegativeButton("Batal", null);
     builder.show();
@@ -138,7 +199,8 @@ private void addData(String nama, double biaya) {
     readDb.close();
 
     // Update adapter
-    adapter = new ProyekAdapter(requireContext(), idList, listProyek, dbHelper);
+    adapter = new ProyekAdapter(requireContext(), idList, listProyek, this, dbHelper);
+    getTotalBiaya();
     recyclerView.setAdapter(adapter);
     adapter.notifyDataSetChanged();
 }

@@ -20,12 +20,13 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
     private List<Proyek> dataList;
     private Context context;
     private DatabaseHelper dbHelper;
-
-    public ProyekAdapter(Context context, List<Integer> idList, List<Proyek> dataList, DatabaseHelper dbHelper) {
+    private OnUpdate listener;
+    public ProyekAdapter(Context context, List<Integer> idList, List<Proyek> dataList, OnUpdate listener, DatabaseHelper dbHelper) {
         this.context = context;
         this.idList = idList;
         this.dataList = dataList;
         this.dbHelper = dbHelper;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,17 +36,27 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
         return new ViewHolder(view);
     }
     
-    private String formatRupiah(double number) {
-     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    private String format_ui_Rupiah(double number) {
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    formatRupiah.setMinimumFractionDigits(2);
+    formatRupiah.setMaximumFractionDigits(2);
     return formatRupiah.format(number);
-    }
+}
 
+    private double format_database_Rupiah(String input) {
+    if (input.isEmpty()) return 0; 
+    String cleaned = input.replace("Rp", "").replace(" ", "").replace(".", "").replace(",", "."); 
+
+      return Double.parseDouble(cleaned); 
+   }
+
+
+    
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
       Proyek proyek = dataList.get(position);
-    holder.tvNama.setText(proyek.getNama());
-    // holder.tvBiaya.setText(formatRupiah(proyek.getBiaya()));
-      
+      holder.tvNama.setText(proyek.getNama());
+
         // Tombol edit
         holder.btnEdit.setOnClickListener(v -> {
             showEditDialog(idList.get(position), position);
@@ -55,6 +66,7 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
         holder.btnDelete.setOnClickListener(v -> {
             new DeleteProyekTask(idList.get(position), position).execute();
         });
+        
     }
 
     @Override
@@ -85,17 +97,21 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
         EditText etBiaya = view.findViewById(R.id.et_biaya);
 
         etNama.setText(dataList.get(position).getNama());
-       etBiaya.setText(String.valueOf(dataList.get(position).getBiaya()));
+        etBiaya.setText(format_ui_Rupiah(dataList.get(position).getBiaya()));
 
 
         builder.setView(view);
         builder.setPositiveButton("Update", (dialog, which) -> {
-            String namaBaru = etNama.getText().toString();
-            double biayaBaru = Double.parseDouble(etBiaya.getText().toString());
-
-            dbHelper.updateProyek(id, namaBaru, biayaBaru);
+            String namaBaru = etNama.getText().toString().trim();
+            String biayaBaru = etBiaya.getText().toString().trim();
+            
+            dbHelper.updateProyek(id, namaBaru, format_database_Rupiah(biayaBaru));
             dataList.get(position).setNama(namaBaru);
-            dataList.get(position).setBiaya(biayaBaru);
+            dataList.get(position).setBiaya(format_database_Rupiah(biayaBaru));
+            
+            if (listener != null) {
+              listener.onBiayaUpdated();
+            }
 
             notifyItemChanged(position);
         });
@@ -125,7 +141,9 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
             if (result) {  // Hanya hapus dari list jika penghapusan berhasil
                 dataList.remove(position);
                 idList.remove(position);
-
+                if (listener != null) {
+              listener.onBiayaUpdated();
+            }
                 notifyDataSetChanged();
             }
         }

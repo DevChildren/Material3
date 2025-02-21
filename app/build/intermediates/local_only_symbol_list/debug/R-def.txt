@@ -215,6 +215,7 @@ id tv_hasil_biaya
 id tv_hasil_material
 id tv_proyek_nama
 id txt_title
+id value
 layout activity_main
 layout bottom_sheet_layout
 layout dialog_edit_proyek
