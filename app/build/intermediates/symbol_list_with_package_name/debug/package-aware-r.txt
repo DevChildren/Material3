@@ -3361,7 +3361,9 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id et_biaya
+id et_lokasi
 id et_nama
+id et_tanggal
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

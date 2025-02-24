@@ -33,10 +33,14 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 import android.widget.Toast;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class HomeFragment extends Fragment  implements OnUpdate{
     private FloatingActionButton fabMain;
-    private TextView text_title;
+    private EditText tanggalMulai;
     private DatabaseHelper dbHelper;
     private RecyclerView recyclerView;
     private ProyekAdapter adapter;
@@ -60,8 +64,9 @@ public class HomeFragment extends Fragment  implements OnUpdate{
         recyclerView = view.findViewById(R.id.rv_proyek);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         
-       getTotalBiaya();
         
+       getTotalBiaya();
+      
         dbHelper = new DatabaseHelper(requireContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -72,9 +77,11 @@ public class HomeFragment extends Fragment  implements OnUpdate{
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String namaProyek = cursor.getString(cursor.getColumnIndexOrThrow("nama_proyek"));
                 double biayaProyek = cursor.getDouble(cursor.getColumnIndexOrThrow("biaya"));
+                String lokasi = cursor.getString(cursor.getColumnIndexOrThrow("lokasi"));
+                String tanggal = cursor.getString(cursor.getColumnIndexOrThrow("tanggal"));
 
                 idList.add(id);
-                listProyek.add(new Proyek(id, namaProyek, biayaProyek));
+                listProyek.add(new Proyek(id, namaProyek, biayaProyek, lokasi, tanggal));
               
             } while (cursor.moveToNext());
         }
@@ -139,6 +146,21 @@ public class HomeFragment extends Fragment  implements OnUpdate{
     return Double.parseDouble(cleaned); 
 }
 
+    private void addTanggal(EditText tanggalMulai) {
+     tanggalMulai.setOnClickListener(v -> {
+            MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                    .setTitleText("Pilih Tanggal")
+                    .build();
+
+            datePicker.addOnPositiveButtonClickListener(selection -> {
+                String tanggal = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                        .format(new Date(selection));
+                tanggalMulai.setText(tanggal);
+            });
+
+            datePicker.show(getParentFragmentManager(), "DATE_PICKER");
+        });
+    }
     
     private void showAddDialog() {
     AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
@@ -147,11 +169,16 @@ public class HomeFragment extends Fragment  implements OnUpdate{
     View view = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_edit_proyek, null);
     EditText etNama = view.findViewById(R.id.et_nama);
     EditText etBiaya = view.findViewById(R.id.et_biaya);
+    EditText etLokasi = view.findViewById(R.id.et_lokasi);
+    EditText etTanggal = view.findViewById(R.id.et_tanggal);
 
+    addTanggal(etTanggal);
     builder.setView(view);
     builder.setPositiveButton("Save", (dialog, which) -> {
     String namaBaru = etNama.getText().toString().trim();
     String biayaBaruString = etBiaya.getText().toString().trim();
+    String lokasi = etLokasi.getText().toString().trim();
+    String tanggal = etTanggal.getText().toString().trim();
 
     double biayaBaru = 0; 
     try {
@@ -160,7 +187,7 @@ public class HomeFragment extends Fragment  implements OnUpdate{
         etBiaya.setError("Format tidak valid");
     }
 
-    addData(namaBaru, biayaBaru); 
+    addData(namaBaru, biayaBaru, lokasi, tanggal); 
     getTotalBiaya();
     
     adapter.notifyDataSetChanged();
@@ -171,11 +198,13 @@ public class HomeFragment extends Fragment  implements OnUpdate{
     builder.show();
 }
 
-private void addData(String nama, double biaya) {
+private void addData(String nama, double biaya, String lokasi, String tanggal) {
     SQLiteDatabase db = dbHelper.getWritableDatabase();
     ContentValues values = new ContentValues();
     values.put("nama_proyek", nama);
     values.put("biaya", biaya);
+    values.put("lokasi", lokasi);
+    values.put("tanggal", tanggal);
     db.insert("estimasi", null, values);
     db.close();
 
@@ -190,9 +219,11 @@ private void addData(String nama, double biaya) {
             int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
             String namaProyek = cursor.getString(cursor.getColumnIndexOrThrow("nama_proyek"));
             double biayaProyek = cursor.getDouble(cursor.getColumnIndexOrThrow("biaya"));
+            String location = cursor.getString(cursor.getColumnIndexOrThrow("lokasi"));
+            String tgl = cursor.getString(cursor.getColumnIndexOrThrow("tanggal"));
 
             idList.add(id);
-            listProyek.add(new Proyek(id, namaProyek, biayaProyek));
+            listProyek.add(new Proyek(id, namaProyek, biayaProyek, location, tgl));
         } while (cursor.moveToNext());
     }
     cursor.close();

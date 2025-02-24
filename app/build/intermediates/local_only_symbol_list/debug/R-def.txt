@@ -188,7 +188,9 @@ id btn_simpan_proyek
 id card_summary
 id drawer_layout
 id et_biaya
+id et_lokasi
 id et_nama
+id et_tanggal
 id fab_main
 id fragment_container
 id img_icon

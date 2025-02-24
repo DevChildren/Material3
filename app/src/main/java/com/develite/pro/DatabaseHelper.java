@@ -13,9 +13,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String TABLE_ESTIMASI = "CREATE TABLE estimasi (" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "nama_proyek TEXT, " +
-            "biaya DOUBLE)";
+        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        "nama_proyek TEXT, " +
+        "biaya DOUBLE, " +
+        "lokasi TEXT, " +
+        "tanggal TEXT)";
+
     private static final String TABLE_MATERIALS = "CREATE TABLE materials(" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT NOT NULL, " + "unit TEXT NOT NULL, " + "price REAL NOT NULL)";
     private static final String TABLE_ESTIMATIONS = "CREATE TABLE estimations(" + "project_id INTEGER NOT NULL, " + "material_id INTEGER NOT NULL)";
     private static final String TABLE_PROJECTS = "CREATE TABLE projcts (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT NOT NULL, " + "client TEXT, " + "start_date TEXT, " + "end_date TEXT, " + "status TEXT CHECK(status IN ('Pending', 'Ongoing', 'Completed')) DEFAULT 'Pending')";
@@ -47,8 +50,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String nama = cursor.getString(cursor.getColumnIndexOrThrow("nama_proyek"));
                 double biaya = cursor.getDouble(cursor.getColumnIndexOrThrow("biaya"));
+                String location = cursor.getString(cursor.getColumnIndexOrThrow("lokasi"));
+               String tanggal = cursor.getString(cursor.getColumnIndexOrThrow("tanggal"));
 
-                list.add(new Proyek(id, nama, biaya));
+                list.add(new Proyek(id, nama, biaya, location, tanggal));
             } while (cursor.moveToNext());
         }
 
