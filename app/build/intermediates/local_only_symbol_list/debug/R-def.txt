@@ -212,6 +212,7 @@ id navigation_view
 id recycler_menu
 id rv_proyek
 id switch_theme
+id title
 id topAppBar
 id tv_hasil_biaya
 id tv_hasil_material

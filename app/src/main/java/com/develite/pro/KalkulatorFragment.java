@@ -45,14 +45,10 @@ public class KalkulatorFragment extends Fragment {
         menuList.add(new MenuItemModel("Kalkulasi Beton Balok", R.drawable.ic_beton_balok));
         menuList.add(new MenuItemModel("Kalkulasi Beton Segitiga", R.drawable.ic_beton_segitiga));
 
-        MenuAdapter adapter = new MenuAdapter(getContext(), menuList, item -> {
-                
-          BottomSheetDialog bottomSheet = new BottomSheetDialog();
-          bottomSheet.show(getParentFragmentManager(), "MyBottomSheetDialog");
-          
-            // Handle klik item
-            // Toast.makeText(getContext(), "Dipilih: " + item.getTitle(), Toast.LENGTH_SHORT).show();
-        });
+    MenuAdapter adapter = new MenuAdapter(getContext(), menuList, item -> {
+    BottomSheetDialog bottomSheet = BottomSheetDialog.newInstance(item.getTitle());
+    bottomSheet.show(getParentFragmentManager(), "MyBottomSheetDialog");
+});
 
         recyclerView.setAdapter(adapter);
 

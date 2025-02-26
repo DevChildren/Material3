@@ -14,23 +14,42 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
 
 public class BottomSheetDialog extends BottomSheetDialogFragment {
-
+  private String title;
+ 
+  public static BottomSheetDialog newInstance(String title) {
+        BottomSheetDialog fragment = new BottomSheetDialog();
+        Bundle args = new Bundle();
+        args.putString("title", title);
+        fragment.setArguments(args);
+        return fragment;
+    }
+    
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            title = getArguments().getString("title");
+        }
+    }
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @NonNull View view, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+        TextInputEditText txtTitle = view.findViewById(R.id.title);
+        txtTitle.setText(title);
+      
     }
     
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         
-        TextInputEditText inputPanjang = view.findViewById(R.id.input_panjang);
+        
+      TextInputEditText inputPanjang = view.findViewById(R.id.input_panjang);
         TextInputEditText inputLebar = view.findViewById(R.id.input_lebar);
         MaterialButton btnHitung = view.findViewById(R.id.btn_hitung_material);
         MaterialTextView tvHasil = view.findViewById(R.id.tv_hasil_material);
-
-        btnHitung.setOnClickListener(v -> {
+      btnHitung.setOnClickListener(v -> {
             String panjangStr = inputPanjang.getText().toString();
             String lebarStr = inputLebar.getText().toString();
 
@@ -55,5 +74,8 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
             behavior.setSkipCollapsed(false); // Bisa dikompresi (collapse)
             behavior.setHideable(true); // Bisa ditutup dengan swipe ke bawah
         }
+    
+      
     }
+    
 }

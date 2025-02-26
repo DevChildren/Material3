@@ -95,9 +95,13 @@ public class ProyekAdapter extends RecyclerView.Adapter<ProyekAdapter.ViewHolder
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_edit_proyek, null);
         EditText etNama = view.findViewById(R.id.et_nama);
         EditText etBiaya = view.findViewById(R.id.et_biaya);
+        EditText etLokasi = view.findViewById(R.id.et_lokasi);
+        EditText etTanggal = view.findViewById(R.id.et_tanggal);
 
         etNama.setText(dataList.get(position).getNama());
         etBiaya.setText(format_ui_Rupiah(dataList.get(position).getBiaya()));
+        etLokasi.setText(dataList.get(position).getLokasi());
+        etTanggal.setText(dataList.get(position).getTanggal());
 
 
         builder.setView(view);
